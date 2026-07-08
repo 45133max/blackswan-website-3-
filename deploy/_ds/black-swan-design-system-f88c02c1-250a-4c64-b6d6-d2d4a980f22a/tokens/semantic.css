@@ -1,0 +1,65 @@
+/* Black Swan — Semantic tokens
+   Theme-aware aliases. Build UI against THESE, not the raw primitives,
+   so light/dark and future themes stay consistent. Set
+   data-theme="dark" on a root element to flip. */
+:root,
+[data-theme="light"] {
+  --background:        var(--color-black-50);
+  --foreground:        var(--color-black-900);
+  --card:              var(--color-white);
+  --card-foreground:   var(--color-black-900);
+  --muted:             var(--color-black-100);
+  --muted-foreground:  var(--color-black-400);
+  --border:            var(--color-black-200);
+  --ring:              var(--color-orange-500);
+
+  --primary:            var(--color-orange-500);
+  --primary-hover:      var(--color-orange-700);
+  --primary-active:     var(--color-orange-800);
+  --primary-foreground: var(--color-white);
+
+  --secondary:            var(--color-black-100);
+  --secondary-hover:      var(--color-black-200);
+  --secondary-foreground: var(--color-black-900);
+
+  --accent:            var(--color-orange-50);
+  --accent-foreground: var(--color-orange-700);
+
+  /* Status, with tints for surfaces */
+  --success: var(--color-success); --success-tint: #ECF7F0;
+  --warning: var(--color-warning); --warning-tint: #FDF6E7;
+  --danger:  var(--color-danger);  --danger-tint:  #FCEEEC;
+  --info:    var(--color-info);    --info-tint:    #EAF1FC;
+
+  /* Focus */
+  --shadow-focus: 0 0 0 3px rgba(240,90,26,.40);
+}
+
+[data-theme="dark"] {
+  --background:        var(--color-black-900);
+  --foreground:        var(--color-black-50);
+  --card:              var(--color-black-700);
+  --card-foreground:   var(--color-black-50);
+  --muted:             var(--color-black-800);
+  --muted-foreground:  var(--color-black-300);
+  --border:            var(--color-black-600);
+
+  --primary-hover:  var(--color-orange-400);
+  --primary-active: var(--color-orange-300);
+
+  --secondary:            var(--color-black-700);
+  --secondary-hover:      var(--color-black-600);
+  --secondary-foreground: var(--color-black-50);
+
+  --accent:            rgba(240,90,26,.16);
+  --accent-foreground: var(--color-orange-300);
+
+  --success: #2FB36A; --success-tint: rgba(47,179,106,.16);
+  --warning: #F0B429; --warning-tint: rgba(240,180,41,.16);
+  --danger:  #F0584B; --danger-tint:  rgba(240,88,75,.16);
+  --info:    #4D85F0; --info-tint:    rgba(77,133,240,.16);
+
+  --shadow-sm: 0 1px 3px 0 rgba(0,0,0,.5);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.55);
+}
