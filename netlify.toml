@@ -1,9 +1,0 @@
-# BlackSwan Website Redesign — Netlify deploy config
-# Always build from canonical source; never drag-and-drop a hand-copied folder.
-
-[build]
-  command = "npm run build"
-  publish = "deploy"
-
-[build.environment]
-  NODE_VERSION = "20"
