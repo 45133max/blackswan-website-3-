@@ -12,6 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const DEPLOY = path.join(ROOT, 'deploy');
 const SOURCE_HTML = path.join(ROOT, 'BlackSwan Website.dc.html');
+const SOURCE_HTML_DE = path.join(ROOT, 'BlackSwan Website.de.dc.html');
 
 const COPY_DIRS = ['assets', '_ds'];
 const COPY_FILES = ['support.js'];
@@ -68,6 +69,12 @@ function main() {
   syncHtml(SOURCE_HTML, path.join(DEPLOY, 'BlackSwan Website.dc.html'));
   console.log('  Copied: index.html, BlackSwan Website.dc.html');
 
+  const deployDeIndex = path.join(DEPLOY, 'de', 'index.html');
+  if (fs.existsSync(SOURCE_HTML_DE)) {
+    syncHtml(SOURCE_HTML_DE, deployDeIndex);
+    console.log('  Copied: de/index.html (from BlackSwan Website.de.dc.html)');
+  }
+
   for (const file of COPY_FILES) {
     const src = path.join(ROOT, file);
     if (!fs.existsSync(src)) {
@@ -94,6 +101,9 @@ function main() {
     path.join(DEPLOY, 'index.html'),
     path.join(DEPLOY, 'BlackSwan Website.dc.html'),
   ];
+  if (fs.existsSync(deployDeIndex)) {
+    htmlTargets.push(deployDeIndex);
+  }
 
   let failed = false;
   for (const file of htmlTargets) {

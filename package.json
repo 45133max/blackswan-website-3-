@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-deploy.mjs",
-    "verify": "node scripts/verify-html.mjs deploy index.html \"BlackSwan Website.dc.html\"",
+    "verify": "node scripts/verify-html.mjs deploy \"deploy/de/index.html\" index.html \"BlackSwan Website.dc.html\"",
     "predeploy": "npm run build",
     "deploy:preview": "npm run build && netlify deploy --dir=deploy",
     "deploy:prod": "npm run build && netlify deploy --dir=deploy --prod"
